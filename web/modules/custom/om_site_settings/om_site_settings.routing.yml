@@ -1,7 +1,9 @@
 om_site_settings:
-  path: '/om-site-settings'
+  path: 'admin/config/site-settings'
   defaults:
-    _title: 'Omedia Settings'
+    _title: 'Site Settings'
     _form: 'Drupal\om_site_settings\Form\OmSettingsForm'
   requirements:
-    _permission: 'access content'
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
