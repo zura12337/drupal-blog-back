@@ -21,11 +21,9 @@ class OmSiteSettingsController extends ControllerBase {
     $build['content'] = [
       '#type' => 'item',
       '#markup' => $this->t("
-        <ul>
-        	<li><strong>Archive Length: </strong>$archive_length</li>
-        	<li><strong>Website Code: </strong>$website_code</li>
-        	<li><strong>Website Description: </strong>$website_description</li>
-        </ul>
+        <h4><strong>Archive Length: </strong>$archive_length</h4>
+        <h4><strong>Website Code: </strong>$website_code</h4>
+        <h4><strong>Website Description: </strong>$website_description</h4>
       "),
     ];
 
