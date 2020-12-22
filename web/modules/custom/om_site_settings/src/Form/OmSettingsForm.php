@@ -84,7 +84,7 @@ class OmSettingsForm extends ConfigFormBase {
         ->set("website_description", $form_state->getValue('website_description'))
         ->save();
     $this->messenger()->addStatus($this->t('The Configuration Has Been Updated'));
-    $form_state->setRedirect('<front>');
+    $form_state->setRedirect('om_site_settings.site_settings');
   }
 
 }
