@@ -2,14 +2,16 @@
 
 namespace Drupal\om_site_settings\Form;
 
-use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Provides a Omedia Site Settings form.
  */
-class OmSettingsForm extends FormBase {
+class OmSettingsForm extends ConfigFormBase {
 
+
+    const SETTINGS = 'om_site_settings.site_settings';
   /**
    * {@inheritdoc}
    */
@@ -17,25 +19,37 @@ class OmSettingsForm extends FormBase {
     return 'om_site_settings_om_settings';
   }
 
-  /**
+  protected function getEditableConfigNames() {
+      return [
+          static::SETTINGS,
+      ];
+  }
+
+
+    /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $config = $this->config(static::SETTINGS);
+
 
     $form['archive_length'] = [
       '#type' => 'number',
       '#title' => $this->t('Archive Length'),
+      "#default_value" => $config->get("archive_length"),
       '#required' => TRUE,
     ];
 
     $form['website_code'] = [
       '#type' => 'textfield',
         '#title' => $this->t("Website Code"),
+        "#default_value" => $config->get("website_code"),
         "#required" => TRUE,
     ];
     $form["website_description"] = [
         "#type" => "text_format",
         "#title" => $this->t("Website Description"),
+        "#default_value" => $config->get("website_description")["value"] ?? '',
         "#required" => TRUE,
     ];
     $form['submit'] = [
@@ -64,6 +78,11 @@ class OmSettingsForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $this->configFactory->getEditable(static::SETTINGS)
+        ->set("archive_length", $form_state->getValue("archive_length"))
+        ->set("website_code", $form_state->getValue("website_code"))
+        ->set("website_description", $form_state->getValue('website_description'))
+        ->save();
     $this->messenger()->addStatus($this->t('The Configuration Has Been Updated'));
     $form_state->setRedirect('<front>');
   }
