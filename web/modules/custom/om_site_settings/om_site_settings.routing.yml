@@ -7,3 +7,10 @@ om_site_settings:
     _permission: 'access administration pages'
   options:
     _admin_route: TRUE
+om_site_settings.site_settings:
+  path: '/om-site-settings'
+  defaults:
+    _title: 'Site Settings'
+    _controller: '\Drupal\om_site_settings\Controller\OmSiteSettingsController::build'
+  requirements:
+    _permission: 'access content'
