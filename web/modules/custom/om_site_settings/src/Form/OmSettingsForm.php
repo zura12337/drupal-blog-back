@@ -66,7 +66,7 @@ class OmSettingsForm extends ConfigFormBase {
   public function validateForm(array &$form, FormStateInterface $form_state) {
       $archive_length = intval($form_state->getValue("archive_length"));
       $website_code = $form_state->getValue("website_code");
-      if($archive_length > 100) {
+      if($archive_length > 100 || $archive_length < 1) {
           $form_state->setErrorByName("archive_length", $this->t("The Archive Length Should be between 1 and 100"));
       };
       if(substr($website_code, 0, 3) !== "OM-" || strlen($website_code) !== 8 || !is_numeric(substr($website_code, 3, 5))) {
