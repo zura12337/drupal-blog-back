@@ -1,4 +1,4 @@
-om_site_settings:
+om_site_settings.site_settings_form:
   path: 'admin/config/site-settings'
   defaults:
     _title: 'Site Settings'
@@ -13,4 +13,4 @@ om_site_settings.site_settings:
     _title: 'Site Settings'
     _controller: '\Drupal\om_site_settings\Controller\OmSiteSettingsController::build'
   requirements:
-    _permission: 'access content'
+    _permission: 'access administration pages'
