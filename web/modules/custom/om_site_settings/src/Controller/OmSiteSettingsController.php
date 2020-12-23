@@ -14,7 +14,7 @@ class OmSiteSettingsController extends ControllerBase {
    */
   public function build() {
 
-  	$config = \Drupal::config("om_site_settings.site_settings");
+  	$config = $this->config("om_site_settings.site_settings");
 		$archive_length = $config->get("archive_length");
 		$website_code = $config->get("website_code");
 		$website_description = strip_tags($config->get("website_description")['value']);
