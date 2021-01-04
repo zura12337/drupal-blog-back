@@ -1,0 +1,22 @@
+uuid: 2e6ef341-222c-4672-b63b-3ede16f62b1c
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - omedia
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: omedia_help
+theme: omedia
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

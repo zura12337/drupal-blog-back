@@ -1,0 +1,22 @@
+uuid: 5c351ac9-59f9-4456-b410-1c7c41a8ac20
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - omedia
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: omedia_content
+theme: omedia
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
