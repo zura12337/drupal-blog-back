@@ -22,6 +22,7 @@
         "drupal/core-recommended": "^9.1",
         "drupal/devel": "^4.1",
         "drupal/jsonapi_extras": "^3.16",
+        "drupal/simple_oauth": "^5.0",
         "drush/drush": "^10.3"
     },
     "conflict": {
