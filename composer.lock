@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46c2060633b16aaef1313848418b152d",
+    "content-hash": "ff10f1583061c49b5c8092a0878a367d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2568,6 +2568,9 @@
                     "services": {
                         "drush.services.yml": "^9"
                     }
+                },
+                "patches_applied": {
+                    "Provide default scopes if client is not requesting a specific scope\n": "https://www.drupal.org/files/issues/provide_default_scopes-2857930-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7193,7 +7196,7 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
