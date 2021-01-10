@@ -1,0 +1,31 @@
+uuid: 73769edd-c41a-49f7-8356-863d92fa863e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - statistics
+  theme:
+    - bartik
+id: popularcontent
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: statistics_popular_block
+settings:
+  id: statistics_popular_block
+  label: 'Popular content'
+  provider: statistics
+  label_display: visible
+  top_day_num: 5
+  top_all_num: 5
+  top_last_num: 5
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      blog: blog
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
