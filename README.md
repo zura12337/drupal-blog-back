@@ -1,5 +1,4 @@
-# Drupal Blog Back 
-##### Drupal 9
+# Drupal Blog
 
 ### Installation 🚀
 
@@ -84,16 +83,10 @@ URL: http://localhost/project-folder/web
                 }
             },
             "field_topic": {
-                "data": [
-									{
+                "data": {
                    	"type": "taxonomy_term--topic",
                     "id": "912e72cc-2c83-4d40-8a45-49dabe040380"
-									},
-								{
-                    "type": "taxonomy_term--topic",
-                    "id": "912e72cc-2c83-4d40-8a45-49dabe040380"
-                }
-								]
+				}
             }
         }
     }
